@@ -26,4 +26,5 @@ function startSwitcher() {
 function stopSwitcher() {
   timerId = clearInterval(timerId);
   buttonStart.disabled = false;
+  buttonStop.disabled = true;
 }
