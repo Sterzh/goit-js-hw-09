@@ -50,7 +50,7 @@ function startTimer() {
       } else {
         timerId = clearInterval(timerId);
         input.disabled = false;
-        Notiflix.Notify.success('Please choose a date in the future');
+        Notiflix.Notify.info('The time is over');
       }
     }, 1000);
   } else {
