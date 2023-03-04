@@ -48,8 +48,10 @@ function startTimer() {
         minutes.textContent = remainingTimeConvert.minutes;
         seconds.textContent = remainingTimeConvert.seconds;
         console.log(remainingTime);
+        input.disabled = true;
       } else {
         timerId = clearInterval(timerId);
+        input.disabled = false;
       }
     }, 1000);
   } else {
