@@ -9,8 +9,9 @@ const hours = document.querySelector('span[data-hours]');
 const minutes = document.querySelector('span[data-minutes]');
 const seconds = document.querySelector('span[data-seconds]');
 
-let currentTime = {};
-let selectedTime = {};
+let currentTime;
+let selectedTime;
+let remainingTime;
 let timerId = null;
 
 buttonStart.addEventListener('click', startTimer);
@@ -36,7 +37,7 @@ flatpickr('#datetime-picker', {
 function startTimer() {
   currentTime = new Date().getTime();
   if (selectedTime > currentTime) {
-    let remainingTime = selectedTime - currentTime;
+    remainingTime = selectedTime - currentTime;
     buttonStart.disabled = true;
     timerId = setInterval(function updateTime(e) {
       if (remainingTime > 1000) {
