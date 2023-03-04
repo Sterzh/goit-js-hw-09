@@ -42,7 +42,7 @@ function startTimer() {
     timerId = setInterval(function updateTime(e) {
       if (remainingTime > 1000) {
         remainingTime -= 1000;
-        remainingTimeConvert = convertMs(remainingTime);
+        const remainingTimeConvert = convertMs(remainingTime);
         days.textContent = remainingTimeConvert.days;
         hours.textContent = remainingTimeConvert.hours;
         minutes.textContent = remainingTimeConvert.minutes;
