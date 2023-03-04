@@ -14,7 +14,6 @@ let selectedTime = {};
 let timerId = null;
 
 buttonStart.addEventListener('click', startTimer);
-
 buttonStart.disabled = true;
 
 flatpickr('#datetime-picker', {
