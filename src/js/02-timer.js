@@ -27,7 +27,7 @@ flatpickr('#datetime-picker', {
     if (selectedTime > currentTime) {
       buttonStart.disabled = false;
     } else {
-      Notiflix.Notify.failure('Time is up');
+      Notiflix.Notify.failure('Please choose a date in the future');
       buttonStart.disabled = true;
     }
   },
