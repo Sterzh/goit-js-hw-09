@@ -11,7 +11,6 @@ const seconds = document.querySelector('span[data-seconds]');
 
 let currentTime;
 let selectedTime;
-let remainingTime;
 let timerId = null;
 
 buttonStart.addEventListener('click', startTimer);
@@ -28,7 +27,7 @@ flatpickr('#datetime-picker', {
     if (selectedTime > currentTime) {
       buttonStart.disabled = false;
     } else {
-      Notiflix.Notify.failure('Please choose a date in the future');
+      Notiflix.Notify.failure('Time is up');
       buttonStart.disabled = true;
     }
   },
@@ -37,7 +36,7 @@ flatpickr('#datetime-picker', {
 function startTimer() {
   currentTime = new Date().getTime();
   if (selectedTime > currentTime) {
-    remainingTime = selectedTime - currentTime;
+    let remainingTime = selectedTime - currentTime;
     buttonStart.disabled = true;
     timerId = setInterval(function updateTime(e) {
       if (remainingTime > 1000) {
@@ -51,6 +50,7 @@ function startTimer() {
       } else {
         timerId = clearInterval(timerId);
         input.disabled = false;
+        Notiflix.Notify.success('Please choose a date in the future');
       }
     }, 1000);
   } else {
