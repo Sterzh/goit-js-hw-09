@@ -36,7 +36,7 @@ flatpickr('#datetime-picker', {
 function startTimer() {
   currentTime = new Date().getTime();
   if (selectedTime > currentTime) {
-    remainingTime = selectedTime - currentTime;
+    let remainingTime = selectedTime - currentTime;
     buttonStart.disabled = true;
     timerId = setInterval(function updateTime(e) {
       if (remainingTime > 1000) {
@@ -46,7 +46,6 @@ function startTimer() {
         hours.textContent = remainingTimeConvert.hours;
         minutes.textContent = remainingTimeConvert.minutes;
         seconds.textContent = remainingTimeConvert.seconds;
-        console.log(remainingTime);
         input.disabled = true;
       } else {
         timerId = clearInterval(timerId);
